@@ -209,46 +209,19 @@
                     }
                 }).then((response) => {
                     response.text().then((text) => {
-                        var imageurl = "http://www.advanscene.com/" + text.split('style="display:block" src="../../')[1].split('"></td>')[0]; //Gets the image source from the game info page HTML
-                        fetch('https://cors-anywhere.herokuapp.com/' + imageurl, {
-                                method: 'GET',
-                                headers: {
-                                    'Connection': 'keep-alive',
-                                    'sec-ch-ua': '"Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"',
-                                    'sec-ch-ua-mobile': '?0',
-                                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
-                                    'Content-Type': 'application/x-www-form-urlencoded',
-                                    'Accept': '*/*',
-                                    'Origin': 'null',
-                                    'Sec-Fetch-Site': 'cross-site',
-                                    'Sec-Fetch-Mode': 'cors',
-                                    'Sec-Fetch-Dest': 'empty',
-                                    'Accept-Language': 'en-US,en;q=0.9',
-                                    'dnt': '1',
-                                    'sec-gpc': '1'
-                                }
-                            }).then((response) => response.blob())
-                            .then((images) => {
-                                console.log(images);
-                                var urlCreator = window.URL || window.webkitURL;
-                                var onLoad = function() {
-                                    document.getElementById("iconimg").removeEventListener("load", onLoad);
-                                    combineImages().then(() => {
-                                        showPage('finished');
-                                    });
-                                }
-                                document.getElementById("iconimg").addEventListener("load", onLoad);
-                                document.getElementById("iconimg").src = urlCreator.createObjectURL(images);
-
-                                // combineImages().then(() => {
-                                // showPage('finished');
-                                // });
-                                //console.log(Base64.encode(images));
-                                //console.log(URL.createObjectURL(images));
+                        var imageurl = "https://www.advanscene.com/" + text.split('style="display:block" src="../../')[1].split('"></td>')[0]; //Gets the image source from the game info page HTML
+                        var onLoad = function() {
+                            console.log("LOAD!");
+                            combineImages().then(() => {
+                                showPage('finished');
                             });
-
-                        console.log(imageurl);
+                            document.getElementById("iconimg").removeEventListener("load", onLoad);
+                        }
+                        document.getElementById("iconimg").addEventListener("load", onLoad);
+                        document.getElementById("iconimg").src = imageurl;
                     });
+                }).catch((err) => {
+                    console.log(err);
                 });
             });
         }
