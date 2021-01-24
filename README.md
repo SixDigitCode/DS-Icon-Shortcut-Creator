@@ -1,10 +1,10 @@
 # DS-Icon-Shortcut-Creator
 
-I enjoy playing emulated DS games on my phone, and I have a folder full of shortcuts to each game of my DS library. However, those shortcuts were scaled poorly (bicubic, boooo!) and didn't look super great on their own so I made this tool to spice them up! (I took the DSi game cartridge icon and added some shadows to spruce things up). Also, the entire .html file is self-contained, so images and stuff are already preloaded and it even works offline! (except for the search, of course)
+I enjoy playing emulated DS games on my phone, and I have a folder full of shortcuts to each game of my DS library. However, those shortcuts were scaled poorly (bicubic, boooo!) and didn't look super great on their own so I made this tool to spice them up! (I took the DSi game cartridge icon and added some shadows to spruce things up).
 
 How to generate an icon:
 
-1. Open the [generator](https://sixdigitcode.github.io/DS-Icon-Shortcut-Creator/). You should also be able to download the .html file and run it from your computer/phone.
+1. Open the [generator](https://sixdigitcode.github.io/DS-Icon-Shortcut-Creator/).
 
 2. If you already have a game icon you'd like to stylize:
 
