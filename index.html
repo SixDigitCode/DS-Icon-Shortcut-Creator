@@ -209,7 +209,7 @@
                     }
                 }).then((response) => {
                     response.text().then((text) => {
-                        var imageurl = "https://www.advanscene.com/" + text.split('style="display:block" src="../../')[1].split('"></td>')[0]; //Gets the image source from the game info page HTML
+                        var imageurl = "http://www.advanscene.com/" + text.split('style="display:block" src="../../')[1].split('"></td>')[0]; //Gets the image source from the game info page HTML
 
                         // fetch('https://cors-anywhere.herokuapp.com/' + imageurl, {
                         //         method: 'GET',
@@ -231,6 +231,7 @@
                         //         }
                         //     }).then((response) => response.blob())
                         fetch("https://cors-anywhere.herokuapp.com/" + imageurl, {
+                                "method": "GET",
                                 "headers": {
                                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                                     "accept-language": "en-US,en;q=0.9",
